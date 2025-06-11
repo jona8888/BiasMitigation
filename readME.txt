@@ -1,54 +1,56 @@
-#Bias Mitigation in k-Nearest Neighbors (kNN)
-This project investigates bias mitigation in k-Nearest Neighbors (kNN) classification 
-by applying fairness-aware preprocessing techniques. 
-The goal is to reduce gender bias in decision-making systems without sacrificing model accuracy.
+## Bias Mitigation in k-Nearest Neighbors (kNN)
 
-#Objective
-To evaluate and improve fairness in kNN models using the following methods:
-- Undersampling: Reducing samples from overrepresented groups.
-- Oversampling (SMOTE)**: Increasing samples for underrepresented groups.
-- Novel Feature Weighting**: Emphasizing socially impactful features (e.g., education, hours worked).
+This project explores how to reduce gender bias in k-Nearest Neighbors (kNN) classification models using fairness-focused preprocessing techniques. The aim is to improve fairness without sacrificing too much accuracy.
 
-#Datasets
-- Adult Census Income Dataset**: Predicts if income > $50K based on demographic/work features.
-- German Credit Dataset**: Classifies individuals as good or bad credit risk based on financial and personal attributes.
+## Objective
 
-#Methodology
-1. Baseline – No mitigation (see `knn682.py`)
-2. Fairness-Aware Sampling:
-   - Undersampling: Drop majority group samples
-   - Oversampling: SMOTE to synthesize minority class
-3. Novel Technique**:
-   - Feature weighting + undersampling for balanced fairness and accuracy
+We test several ways to make kNN predictions fairer, including:
+- **Undersampling**: Reducing the size of the overrepresented group
+- **Oversampling (SMOTE)**: Generating synthetic examples for the underrepresented group
+- **Feature weighting**: Giving more importance to features like education and hours worked
 
-#Project Structure
+## Datasets
+
+- **Adult Census Income**: Predicts whether an individual's income is over $50K based on demographics and work history
+- **German Credit**: Assesses creditworthiness using financial and personal information
+
+## Methodology
+
+1. **Baseline**: Standard kNN model without any fairness tweaks (`knn682.py`)
+2. **Sampling methods**:
+   - **Undersampling**: Drops some male samples to balance the gender ratio
+   - **Oversampling**: Uses SMOTE to generate synthetic female samples
+3. **Novel technique**:
+   - Combines feature weighting and undersampling for better fairness and accuracy
+
+## Project Structure
 
 | File                        | Description |
 |-----------------------------|-------------|
-| `knn682.py`                 | Baseline kNN** on the Adult dataset with no fairness adjustments. |
-| `Adult1_UNDERsam.py`        | kNN on Adult dataset using undersampling to mitigate gender imbalance. |
-| `Adult2_OVERsam.py`         | kNN on Adult dataset using SMOTE oversampling to balance gender. |
-| `German1_UNDER.py`          | kNN on German Credit dataset using undersampling. |
-| `Germ1_OVER.py`             | kNN on German Credit dataset using oversampling. |
-| `novel.py`                  | Implements a **novel approach** with feature weighting + undersampling for fairness and accuracy. |
-| `interactive_bar_plot.html`| Interactive visualization of gender-specific accuracy and overall model comparisons. |
+| `knn682.py`                 | Baseline model on the Adult dataset (no mitigation) |
+| `Adult1_UNDERsam.py`        | Adult dataset with undersampling applied |
+| `Adult2_OVERsam.py`         | Adult dataset with SMOTE oversampling |
+| `German1_UNDER.py`          | German Credit dataset with undersampling |
+| `Germ1_OVER.py`             | German Credit dataset with oversampling |
+| `novel.py`                  | Novel method with custom feature weighting |
+| `interactive_bar_plot.html`| Visualization comparing gender-based accuracy across models |
 
-#Results Summary
-- Undersampling improved fairness with minor accuracy loss.
-- SMOTE Oversampling** helped recover performance while reducing bias.
-- Novel Method** showed:
-  - Accuracy: 86.1%
+## Results Summary
+
+- **Undersampling** helped close the gender accuracy gap, though it slightly reduced overall accuracy.
+- **SMOTE oversampling** maintained higher accuracy while reducing bias.
+- **The novel method** produced the best balance:
+  - Overall Accuracy: 86.1%
   - Male Accuracy: 80.6%
   - Female Accuracy: 91.6%
-  - Fairness gap reduction
 
-#Conclusion
-Bias-aware sampling and feature engineering significantly improve fairness in kNN classification. 
-The novel approach balances both fairness and accuracy and is promising for real-world deployment.
+## Conclusion
 
-#References
+Preprocessing strategies like sampling and feature weighting can improve fairness in kNN models. Our custom method shows that it's possible to make fairer predictions without heavily compromising accuracy.
+
+## References
+
 - Barocas et al. – *Fairness and Machine Learning*
 - Dwork et al. – *Fairness Through Awareness*
 - Kamiran & Calders – *Data Preprocessing Techniques*
 - Hort et al. (2021) – *Bias Mitigation Survey*
-
