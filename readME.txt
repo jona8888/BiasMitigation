@@ -1,4 +1,4 @@
-# Bias Mitigation in k-Nearest Neighbors (kNN)
+#Bias Mitigation in k-Nearest Neighbors (kNN)
 This project investigates bias mitigation in k-Nearest Neighbors (kNN) classification 
 by applying fairness-aware preprocessing techniques. 
 The goal is to reduce gender bias in decision-making systems without sacrificing model accuracy.
