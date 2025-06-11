@@ -1,23 +1,18 @@
 #Bias Mitigation in k-Nearest Neighbors (kNN)
 
 
-Machine learning algorithms like k-Nearest Neighbors are
-increasingly used in important decision-making roles, rais-
-ing concerns about fairness and bias. Many datasets used
-to train these algorithms can contain biases that lead to dis-
-criminatory outcomes, particularly affecting groups based
-on race, gender, and socioeconomic status. While it’s com-
-mon to remove sensitive features from training data as a
-way to promote fairness, this approach often falls short, as
-bias can still emerge from other features. Additionally, the
-reliance on KNN and similar models can perpetuate these
-biases if not carefully managed, underscoring the need for
-ongoing evaluation and improvement of fairness in machine
-learning applications.
+Machine learning algorithms like k-Nearest Neighbors are increasingly used in important decision-making roles, 
+raising concerns about fairness and bias. Many datasets used to train these algorithms can contain biases that 
+lead to discriminatory outcomes, particularly affecting groups basedon race, gender, and socioeconomic status. 
+While it’s common to remove sensitive features from training data as away to promote fairness, this approach often 
+falls short, asbias can still emerge from other features. Additionally, the reliance on KNN and similar models 
+can perpetuate thesebiases if not carefully managed, underscoring the need for ongoing evaluation and improvement 
+of fairness in machinelearning applications.
 
 
 
-This project explores how to reduce gender bias in k-Nearest Neighbors (kNN) classification models using fairness-focused preprocessing techniques. The aim is to improve fairness without sacrificing too much accuracy.
+This project explores how to reduce gender bias in k-Nearest Neighbors (kNN) classification models using 
+fairness-focused preprocessing techniques. The aim is to improve fairness without sacrificing too much accuracy.
 
 #Objective
 
